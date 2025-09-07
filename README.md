@@ -2,6 +2,33 @@
 
 Mount Angular components in VItest Browser Mode. 
 
+## Installation
+
+```sh
+pnpm add -D vitest-browser-angular
+```
+
+## Setup
+
+```ts
+// vitest.config.ts
+
+export default defineConfig({
+  test: {
+    globals: true,
+
+    // 👇 This is what you need to add
+    setupFiles: ['vitest-browser-angular/setup-zones'],
+
+    browser: {
+      enabled: true,
+      provider: 'playwright',
+      instances: [{ browser: 'chromium' }],
+    },
+  },
+});
+```
+
 ## Usage
 
 ```ts
