@@ -44,6 +44,8 @@ jobs:
         shell: bash
         run: pnpm lint
 
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
       - name: Test
         shell: bash
         run: pnpm test
