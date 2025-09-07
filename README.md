@@ -8,7 +8,7 @@ Mount Angular components in VItest Browser Mode.
 pnpm add -D vitest-browser-angular
 ```
 
-## Setup
+## Setup Test Environment with Zone.js
 
 ```ts
 // vitest.config.ts
@@ -28,6 +28,10 @@ export default defineConfig({
   },
 });
 ```
+
+## Setup Test Environment with Zoneless
+
+TBD
 
 ## Usage
 
