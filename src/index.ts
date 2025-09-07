@@ -1,4 +1,4 @@
-import type { Type } from "@angular/core";
+import type { EnvironmentProviders, Provider, Type } from "@angular/core";
 import {
   type ComponentFixture,
   ɵgetCleanupHook as getCleanupHook,
@@ -19,8 +19,8 @@ interface RoutingConfig {
 
 interface MountConfig {
   withRouting?: RoutingConfig;
-  providers?: any[];
-  imports?: any[];
+  providers?: Array<Provider | EnvironmentProviders>;
+  imports?: unknown[];
 }
 
 export interface MountResult<T> {

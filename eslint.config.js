@@ -6,7 +6,7 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config([
   eslintConfigPrettier,
-  globalIgnores(['dist']),
+  globalIgnores(['dist', '.changeset']),
   {
     files: ['**/*.{ts,tsx}'],
     extends: [
@@ -18,4 +18,9 @@ export default tseslint.config([
       globals: globals.browser,
     },
   },
+  {
+    rules: {
+      'no-empty-pattern': 'off',
+    }
+  }
 ])
