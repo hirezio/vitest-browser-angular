@@ -57,8 +57,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/ms-playwright
-          # Key ties the cache to OS + Playwright version changes (via e2e/pom.xml)
-          key: ${{ runner.os }}-playwright-${{ steps.playwright-version.outputs.version }}
+          key: playwright-${{ runner.os }}-${{ env.PLAYWRIGHT_VERSION }}
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
