@@ -5,7 +5,10 @@ on:
   push:
     branches:
       - main
-
+    paths-ignore:
+      - '*.md'
+      - '.gitignore'
+      - 'LICENSE'
 jobs:
   release:
     runs-on: ubuntu-latest
