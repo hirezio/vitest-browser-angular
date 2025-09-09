@@ -67,6 +67,14 @@ Make sure you add `vitest-browser-angular` to the `types` array in your `tsconfi
 
 If it doesn't work, you probably forgot to add `@vitest/browser` to the `types` array as well.
 
+**Example:**
+```json
+
+"types": [
+  "@vitest/browser",
+  "vitest-browser-angular"
+]
+```
 
 ## Contributing
 
