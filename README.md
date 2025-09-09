@@ -53,6 +53,21 @@ test('mount', async ({ mount }) => {
 });
 ```
 
+## Extending Vitest Context
+
+If you want to extend the library's test context (fixtures) like this:
+
+```ts
+import { test as testBase } from 'vitest-browser-angular'
+
+export const test = testBase.extend(...)
+```
+
+Make sure you add `vitest-browser-angular` to the `types` array in your `tsconfig.json`
+
+If it doesn't work, you probably forgot to add `@vitest/browser` to the `types` array as well.
+
+
 ## Contributing
 
 Want to contribute? Yayy! 🎉
