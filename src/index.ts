@@ -18,7 +18,7 @@ interface RoutingConfig {
 }
 
 interface MountConfig {
-  withRouting?: RoutingConfig;
+  withRouting?: RoutingConfig | boolean;
   providers?: Array<Provider | EnvironmentProviders>;
   imports?: unknown[];
 }
@@ -54,7 +54,11 @@ export const test = baseTest.extend<{
       const mountResult: Partial<MountResult<T>> = {};
 
       if (config?.withRouting) {
-        providers.push(provideRouter(config.withRouting.routes));
+        const routes =
+          typeof config.withRouting === "boolean"
+            ? []
+            : config.withRouting.routes;
+        providers.push(provideRouter(routes));
       }
 
       TestBed.configureTestingModule({
@@ -64,7 +68,9 @@ export const test = baseTest.extend<{
 
       if (config?.withRouting) {
         const routerHarness = await RouterTestingHarness.create(
-          config.withRouting.initialRoute,
+          typeof config.withRouting === "boolean"
+            ? undefined
+            : config.withRouting.initialRoute,
         );
         mountResult.routerHarness = routerHarness;
         mountResult.router = TestBed.inject(Router);
