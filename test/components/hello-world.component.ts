@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-  template: '<h1>{{ title }}</h1>',
+  selector: 'app-hello-world',
+  template: `
+    <div>
+      <h1>{{ title }}</h1>
+    </div>
+  `,
 })
 export class HelloWorldComponent {
   title = 'Hello World';
