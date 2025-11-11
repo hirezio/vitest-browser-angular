@@ -1,5 +1,11 @@
 # vitest-browser-angular
 
+## 0.0.4
+
+### Patch Changes
+
+- 🐞🩹 wrong types generated for index.ts (by [@shairez](https://github.com/shairez) in [`48c3b0f`](https://github.com/hirezio/vitest-browser-angular/commit/48c3b0f701e62570d309574aa52d9bf6cbeba52b))
+
 ## 0.0.3
 
 ### Patch Changes
